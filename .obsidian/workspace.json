@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00-meta/orchestrator-system-prompt.md",
+                "file": "02-trading-skills/sportsbook-kalshi-divergence.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "orchestrator-system-prompt"
+              "title": "sportsbook-kalshi-divergence"
             }
           }
         ]
@@ -183,15 +183,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "e976d3d4a6c2b095",
+  "active": "876aa3258512486b",
   "lastOpenFiles": [
+    "04-trade-history/postmortems/2026-07-17-mlb-401872178.md",
+    "03-market-context/active-games/mlb-401872178.md",
+    "03-market-context/daily-slate/2026-07-17-mlb.md",
+    "02-trading-skills/live-win-prob-overreaction.md",
+    "02-trading-skills/garbage-time-mispricing.md",
+    "02-trading-skills/_skill-template.md",
+    "01-agents/trader/system-prompt.md",
+    "00-meta/orchestrator-system-prompt.md",
     "00-meta/league-config.md",
     "00-meta/agent-roster.md",
     "02-trading-skills/sportsbook-kalshi-divergence.md",
-    "02-trading-skills/garbage-time-mispricing.md",
-    "02-trading-skills/_skill-template.md",
     "01-agents/game-monitor/system-prompt.md",
-    "01-agents/analyst/system-prompt.md",
-    "00-meta/orchestrator-system-prompt.md"
+    "01-agents/analyst/system-prompt.md"
   ]
 }

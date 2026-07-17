@@ -29,6 +29,7 @@ scoreboard response per league.
 | ESPN scoreboard | `https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard` |
 | ESPN summary (win prob) | `https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event={event_id}` (win probability in `winprobability[]`) |
 | Kalshi game series ticker | `KXNFLGAME` ⚠ verify at runtime |
+| grammar_verified | false |
 | Season window | Preseason: early Aug – late Aug. Regular season: first Thu after Labor Day – early Jan. Playoffs: mid Jan – Super Bowl (2nd Sun of Feb). **Off-season: mid-Feb – July.** |
 | Game days | Primarily Thu/Sun/Mon (regular season); Sat late-season |
 | Typical game length | ~3h 10m real time |
@@ -84,6 +85,7 @@ Columns: Kalshi ticker abbr (⚠ = unverified guess) | ESPN abbr | ESPN display 
 | ESPN scoreboard | `https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard` |
 | ESPN summary (win prob) | `https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event={event_id}` |
 | Kalshi game series ticker | `KXNBAGAME` ⚠ verify at runtime (may be `KXNBA`) |
+| grammar_verified | false |
 | Season window | Preseason: early Oct. Regular season: ~Oct 21 – mid Apr. Play-in/Playoffs: mid Apr – Finals (mid Jun). **Off-season: late Jun – Sep.** |
 | Game days | Daily during season, heavy Tue/Wed/Fri/Sat slates |
 | Typical game length | ~2h 20m real time |
@@ -139,7 +141,8 @@ mis-match here — this table is mandatory.
 | ESPN scoreboard | `https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard` |
 | ESPN summary (win prob) | `https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/summary?event={event_id}` |
 | Kalshi game series ticker | `KXMLBGAME` ✅ verified live 2026-07-17 |
-| Kalshi ticker grammar | ✅ verified live 2026-07-17: event ticker `KXMLBGAME-{YY}{MON}{DD}{HHMM}{AWAY}{HOME}` where `{HHMM}` is scheduled start in ET (e.g. `KXMLBGAME-26JUL191920LADNYY` = LAD @ NYY, Jul 19 2026, 7:20 PM ET); market ticker appends `-{TEAM}` for the YES side (`...-NYY`). The embedded start time disambiguates doubleheaders directly. Market titles are truncated ("New York Y") — never match on title text, only ticker abbreviations. |
+| grammar_verified | true |
+| Kalshi ticker grammar | ✅ verified live 2026-07-17: event ticker `KXMLBGAME-{YY}{MON}{DD}{HHMM}{AWAY}{HOME}[G{n}]` where `{HHMM}` is scheduled start in ET (e.g. `KXMLBGAME-26JUL191920LADNYY` = LAD @ NYY, Jul 19 2026, 7:20 PM ET) and the optional `G{n}` suffix marks doubleheader game n (observed live: `...TBBOSG2`); market ticker appends `-{TEAM}` for the YES side (`...-NYY`). Both the embedded start time AND the G-suffix disambiguate doubleheaders. Market titles are truncated ("New York Y") — never match on title text, only ticker abbreviations. |
 | Season window | Spring training: late Feb – late Mar. Regular season: late Mar – late Sep. Playoffs: Oct – World Series (late Oct/early Nov). **Off-season: Nov – mid-Feb.** |
 | Game days | Daily, typically 8–15 games/day; All-Star break ~mid-July (4 quiet days) |
 | Typical game length | ~2h 40m real time (pitch clock era) |
@@ -149,35 +152,35 @@ mis-match here — this table is mandatory.
 
 | Kalshi | ESPN | ESPN display name | Common names |
 |---|---|---|---|
-| ARI ⚠ | ARI | Arizona Diamondbacks | Diamondbacks, D-backs, Arizona |
-| ATL ⚠ | ATL | Atlanta Braves | Braves, Atlanta |
-| BAL ⚠ | BAL | Baltimore Orioles | Orioles, O's, Baltimore |
-| BOS ⚠ | BOS | Boston Red Sox | Red Sox, Sox (ambiguous — see CHW), Boston |
+| AZ ✅ | ARI | Arizona Diamondbacks | Diamondbacks, D-backs, Arizona (✅ verified live 2026-07-17: Kalshi uses AZ, NOT ARI — diverges from ESPN) |
+| ATL ✅ | ATL | Atlanta Braves | Braves, Atlanta |
+| BAL ✅ | BAL | Baltimore Orioles | Orioles, O's, Baltimore |
+| BOS ✅ | BOS | Boston Red Sox | Red Sox, Sox (ambiguous — see CHW), Boston |
 | **CHC ⚠** | **CHC** | Chicago Cubs | Cubs, Cubbies, Chicago Cubs |
-| **CHW ⚠** | **CHW** | Chicago White Sox | White Sox, Chicago White Sox (alt abbr: CWS — ⚠ known divergence risk) |
-| CIN ⚠ | CIN | Cincinnati Reds | Reds, Cincinnati |
-| CLE ⚠ | CLE | Cleveland Guardians | Guardians, Cleveland |
-| COL ⚠ | COL | Colorado Rockies | Rockies, Colorado |
-| DET ⚠ | DET | Detroit Tigers | Tigers, Detroit |
-| HOU ⚠ | HOU | Houston Astros | Astros, Houston |
-| KC ⚠ | KC | Kansas City Royals | Royals, Kansas City (alt abbr: KCR) |
-| LAA ⚠ | LAA | Los Angeles Angels | Angels, Halos, LA Angels |
-| LAD ⚠ | LAD | Los Angeles Dodgers | Dodgers, LA Dodgers |
-| MIA ⚠ | MIA | Miami Marlins | Marlins, Miami |
-| MIL ⚠ | MIL | Milwaukee Brewers | Brewers, Brew Crew, Milwaukee |
-| MIN ⚠ | MIN | Minnesota Twins | Twins, Minnesota |
-| NYM ⚠ | NYM | New York Mets | Mets, NY Mets |
-| NYY ⚠ | NYY | New York Yankees | Yankees, Yanks, NY Yankees |
+| **CWS ✅** | **CHW** | Chicago White Sox | White Sox, Chicago White Sox (✅ verified live 2026-07-17: Kalshi uses CWS, ESPN uses CHW — divergence confirmed) |
+| CIN ✅ | CIN | Cincinnati Reds | Reds, Cincinnati |
+| CLE ✅ | CLE | Cleveland Guardians | Guardians, Cleveland |
+| COL ✅ | COL | Colorado Rockies | Rockies, Colorado |
+| DET ✅ | DET | Detroit Tigers | Tigers, Detroit |
+| HOU ✅ | HOU | Houston Astros | Astros, Houston |
+| KC ✅ | KC | Kansas City Royals | Royals, Kansas City (alt abbr: KCR) |
+| LAA ✅ | LAA | Los Angeles Angels | Angels, Halos, LA Angels |
+| LAD ✅ | LAD | Los Angeles Dodgers | Dodgers, LA Dodgers |
+| MIA ✅ | MIA | Miami Marlins | Marlins, Miami |
+| MIL ✅ | MIL | Milwaukee Brewers | Brewers, Brew Crew, Milwaukee |
+| MIN ✅ | MIN | Minnesota Twins | Twins, Minnesota |
+| NYM ✅ | NYM | New York Mets | Mets, NY Mets |
+| NYY ✅ | NYY | New York Yankees | Yankees, Yanks, NY Yankees |
 | **ATH ✅** | **ATH** | Athletics | A's, Athletics, Sacramento Athletics (✅ Kalshi ATH verified live 2026-07-17; franchise relocated 2025 — legacy abbr OAK may still appear in some data sources) |
-| PHI ⚠ | PHI | Philadelphia Phillies | Phillies, Phils, Philadelphia |
-| PIT ⚠ | PIT | Pittsburgh Pirates | Pirates, Bucs (ambiguous — see TB NFL), Pittsburgh |
-| SD ⚠ | SD | San Diego Padres | Padres, San Diego (alt abbr: SDP) |
-| SEA ⚠ | SEA | Seattle Mariners | Mariners, M's, Seattle |
-| SF ⚠ | SF | San Francisco Giants | Giants (ambiguous — see NYG NFL), San Francisco (alt abbr: SFG) |
-| STL ⚠ | STL | St. Louis Cardinals | Cardinals (ambiguous — see ARI NFL), Cards, St. Louis |
-| TB ⚠ | TB | Tampa Bay Rays | Rays, Tampa Bay (alt abbr: TBR) |
-| TEX ⚠ | TEX | Texas Rangers | Rangers (ambiguous — NY Rangers NHL), Texas |
-| TOR ⚠ | TOR | Toronto Blue Jays | Blue Jays, Jays, Toronto |
+| PHI ✅ | PHI | Philadelphia Phillies | Phillies, Phils, Philadelphia |
+| PIT ✅ | PIT | Pittsburgh Pirates | Pirates, Bucs (ambiguous — see TB NFL), Pittsburgh |
+| SD ✅ | SD | San Diego Padres | Padres, San Diego (alt abbr: SDP) |
+| SEA ✅ | SEA | Seattle Mariners | Mariners, M's, Seattle |
+| SF ✅ | SF | San Francisco Giants | Giants (ambiguous — see NYG NFL), San Francisco (alt abbr: SFG) |
+| STL ✅ | STL | St. Louis Cardinals | Cardinals (ambiguous — see ARI NFL), Cards, St. Louis |
+| TB ✅ | TB | Tampa Bay Rays | Rays, Tampa Bay (alt abbr: TBR) |
+| TEX ✅ | TEX | Texas Rangers | Rangers (ambiguous — NY Rangers NHL), Texas |
+| TOR ✅ | TOR | Toronto Blue Jays | Blue Jays, Jays, Toronto |
 | WSH ✅ | WSH | Washington Nationals | Nationals, Nats, Washington (✅ verified live 2026-07-17: Kalshi uses WSH, matching ESPN) |
 
 **Ambiguity rule:** nickname-only matches ("Giants", "Cardinals", "Rangers", "Bucs",
