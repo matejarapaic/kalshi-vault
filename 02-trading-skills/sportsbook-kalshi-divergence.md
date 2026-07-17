@@ -6,7 +6,7 @@ confidence_threshold: 0.70
 risk_profile: medium
 win_rate: null
 sample_size: 0
-status: draft  # Category B — thresholds NOT confirmed; do not trade until status: confirmed
+status: confirmed  # thresholds explicitly approved by owner 2026-07-17
 last_updated: 2026-07-17
 ---
 
@@ -54,7 +54,7 @@ Half-Kelly on measured edge (consensus prob vs. Kalshi price, fees included), vi
 `risk-management`. Per-trade cap: **5% of bankroll**. Risk multiplier 1.0×.
 Pregame entries: half size (0.5× multiplier) — pregame edges are smaller and slower
 to converge, tying up exposure.
-DRAFT NUMBERS — Category B, pending explicit confirmation.
+Numbers confirmed by owner 2026-07-17.
 
 ## Edge cases / do-not-trade list
 - Odds-format conversion must come from `odds-api`'s tested converter only — never

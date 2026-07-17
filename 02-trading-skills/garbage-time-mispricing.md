@@ -6,7 +6,7 @@ confidence_threshold: 0.60
 risk_profile: low
 win_rate: null
 sample_size: 0
-status: draft  # Category B — thresholds NOT confirmed; do not trade until status: confirmed
+status: confirmed  # thresholds explicitly approved by owner 2026-07-17
 last_updated: 2026-07-17
 ---
 
@@ -54,7 +54,7 @@ Flat sizing, not Kelly (Kelly explodes at p→1 and would suggest absurd size).
 Per-trade cap: **5% of bankroll**. Additional correlation rule: total simultaneous
 garbage-time exposure across ALL games capped at **10% of bankroll** — five
 "sure things" failing on the same night is exactly the tail this rule exists for.
-DRAFT NUMBERS — Category B, pending explicit confirmation.
+Numbers confirmed by owner 2026-07-17.
 
 ## Edge cases / do-not-trade list
 - NBA: never enter while the trailing team is intentionally fouling AND win prob

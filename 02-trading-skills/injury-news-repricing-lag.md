@@ -6,7 +6,7 @@ confidence_threshold: 0.75
 risk_profile: high
 win_rate: null
 sample_size: 0
-status: draft  # Category B — thresholds NOT confirmed; do not trade until status: confirmed
+status: confirmed  # thresholds explicitly approved by owner 2026-07-17
 last_updated: 2026-07-17
 ---
 
@@ -53,7 +53,7 @@ ALL of the following:
 Quarter-Kelly (0.5× the standard half-Kelly multiplier) via `risk-management`.
 Per-trade cap: **3% of bankroll** — tighter than other skills because sizing into
 news flow carries adverse-selection risk that the Kelly edge estimate doesn't capture.
-DRAFT NUMBERS — Category B, pending explicit confirmation.
+Numbers confirmed by owner 2026-07-17.
 
 ## Edge cases / do-not-trade list
 - Never trade on social-media-only reports; entry requires the ESPN feed flag.

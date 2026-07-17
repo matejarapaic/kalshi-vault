@@ -6,7 +6,7 @@ confidence_threshold: 0.65
 risk_profile: medium
 win_rate: null
 sample_size: 0
-status: draft  # Category B — thresholds NOT confirmed; do not trade until status: confirmed
+status: confirmed  # thresholds explicitly approved by owner 2026-07-17
 last_updated: 2026-07-17
 ---
 
@@ -55,7 +55,7 @@ Exit (market order acceptable) when ANY of:
 Half-Kelly on the measured edge (Kalshi de-vigged price vs. ESPN model prob), through
 the central `risk-management` skill. Per-trade cap: **5% of bankroll**. This skill
 gets a 1.0× risk multiplier (baseline).
-DRAFT NUMBERS — Category B, pending explicit confirmation.
+Numbers confirmed by owner 2026-07-17.
 
 ## Edge cases / do-not-trade list
 - ESPN win-prob feed stale (last update > 90s old) → the "gap" is garbage. No trade.

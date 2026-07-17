@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "6cbb18b78f4d217b",
+    "type": "split",
+    "children": [
+      {
+        "id": "c846dd0144228f9a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e976d3d4a6c2b095",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00-meta/orchestrator-system-prompt.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "orchestrator-system-prompt"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "24383f6f33a34ba2",
+    "type": "split",
+    "children": [
+      {
+        "id": "4920f976eeece017",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "876aa3258512486b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "4e7c7b5ad3ebc349",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "62d417ae2972479c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "86c0db95453c41dd",
+    "type": "split",
+    "children": [
+      {
+        "id": "4ea8a08a32837274",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9eab94557c142684",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "00-meta/orchestrator-system-prompt.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for orchestrator-system-prompt"
+            }
+          },
+          {
+            "id": "d9e250696db80549",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "00-meta/orchestrator-system-prompt.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from orchestrator-system-prompt"
+            }
+          },
+          {
+            "id": "822d8d378e367414",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "0e9b5e4b8964d5be",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "6aa2bb1346e1ccb7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "00-meta/orchestrator-system-prompt.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of orchestrator-system-prompt"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "e976d3d4a6c2b095",
+  "lastOpenFiles": [
+    "00-meta/league-config.md",
+    "00-meta/agent-roster.md",
+    "02-trading-skills/sportsbook-kalshi-divergence.md",
+    "02-trading-skills/garbage-time-mispricing.md",
+    "02-trading-skills/_skill-template.md",
+    "01-agents/game-monitor/system-prompt.md",
+    "01-agents/analyst/system-prompt.md",
+    "00-meta/orchestrator-system-prompt.md"
+  ]
+}
