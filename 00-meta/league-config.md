@@ -71,7 +71,7 @@ Columns: Kalshi ticker abbr (⚠ = unverified guess) | ESPN abbr | ESPN display 
 | SF ⚠ | SF | San Francisco 49ers | 49ers, Niners, San Francisco |
 | TB ⚠ | TB | Tampa Bay Buccaneers | Buccaneers, Bucs, Tampa Bay, Tampa |
 | TEN ⚠ | TEN | Tennessee Titans | Titans, Tennessee |
-| WAS ⚠ | WSH | Washington Commanders | Commanders, Washington (⚠ **known divergence risk: ESPN uses WSH, Kalshi likely WAS** — verify first) |
+| WSH ⚠ | WSH | Washington Commanders | Commanders, Washington (MLB verification 2026-07-17 showed Kalshi uses WSH there — WSH is now the best guess here too, but verify NFL live before trusting) |
 
 ---
 
@@ -138,7 +138,8 @@ mis-match here — this table is mandatory.
 | ESPN sport/league slug | `baseball/mlb` |
 | ESPN scoreboard | `https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard` |
 | ESPN summary (win prob) | `https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/summary?event={event_id}` |
-| Kalshi game series ticker | `KXMLBGAME` ⚠ verify at runtime |
+| Kalshi game series ticker | `KXMLBGAME` ✅ verified live 2026-07-17 |
+| Kalshi ticker grammar | ✅ verified live 2026-07-17: event ticker `KXMLBGAME-{YY}{MON}{DD}{HHMM}{AWAY}{HOME}` where `{HHMM}` is scheduled start in ET (e.g. `KXMLBGAME-26JUL191920LADNYY` = LAD @ NYY, Jul 19 2026, 7:20 PM ET); market ticker appends `-{TEAM}` for the YES side (`...-NYY`). The embedded start time disambiguates doubleheaders directly. Market titles are truncated ("New York Y") — never match on title text, only ticker abbreviations. |
 | Season window | Spring training: late Feb – late Mar. Regular season: late Mar – late Sep. Playoffs: Oct – World Series (late Oct/early Nov). **Off-season: Nov – mid-Feb.** |
 | Game days | Daily, typically 8–15 games/day; All-Star break ~mid-July (4 quiet days) |
 | Typical game length | ~2h 40m real time (pitch clock era) |
@@ -167,7 +168,7 @@ mis-match here — this table is mandatory.
 | MIN ⚠ | MIN | Minnesota Twins | Twins, Minnesota |
 | NYM ⚠ | NYM | New York Mets | Mets, NY Mets |
 | NYY ⚠ | NYY | New York Yankees | Yankees, Yanks, NY Yankees |
-| **ATH ⚠** | **ATH** | Athletics | A's, Athletics, Sacramento Athletics (⚠ franchise relocated 2025; legacy abbr OAK may still appear in some data sources) |
+| **ATH ✅** | **ATH** | Athletics | A's, Athletics, Sacramento Athletics (✅ Kalshi ATH verified live 2026-07-17; franchise relocated 2025 — legacy abbr OAK may still appear in some data sources) |
 | PHI ⚠ | PHI | Philadelphia Phillies | Phillies, Phils, Philadelphia |
 | PIT ⚠ | PIT | Pittsburgh Pirates | Pirates, Bucs (ambiguous — see TB NFL), Pittsburgh |
 | SD ⚠ | SD | San Diego Padres | Padres, San Diego (alt abbr: SDP) |
@@ -177,7 +178,7 @@ mis-match here — this table is mandatory.
 | TB ⚠ | TB | Tampa Bay Rays | Rays, Tampa Bay (alt abbr: TBR) |
 | TEX ⚠ | TEX | Texas Rangers | Rangers (ambiguous — NY Rangers NHL), Texas |
 | TOR ⚠ | TOR | Toronto Blue Jays | Blue Jays, Jays, Toronto |
-| WAS ⚠ | WSH | Washington Nationals | Nationals, Nats, Washington (⚠ same WSH/WAS divergence as NFL/NBA) |
+| WSH ✅ | WSH | Washington Nationals | Nationals, Nats, Washington (✅ verified live 2026-07-17: Kalshi uses WSH, matching ESPN) |
 
 **Ambiguity rule:** nickname-only matches ("Giants", "Cardinals", "Rangers", "Bucs",
 "Sox") are NEVER sufficient across leagues. The league-matching skill must always
