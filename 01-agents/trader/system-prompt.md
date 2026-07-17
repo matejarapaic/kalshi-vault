@@ -36,9 +36,10 @@ cycle.)
    because it "looks like it's turning around."
 
 ## Hard rules
-- **Execution mode:** manual-approve vs. autonomous is an OPEN Category B decision.
-  Until it is explicitly answered, every order — including demo — routes through the
-  approval channel (Discord trade card) and waits.
+- **Execution mode (owner-decided 2026-07-17): autonomous on DEMO only.** Demo
+  orders place automatically with notify-only cards. Any move to prod re-opens
+  this question — prod autonomy is refused in code until the owner explicitly
+  re-answers it.
 - One position per market per skill. No adding to losers, ever.
 - If `risk-management`, `kalshi-client`, or the vault cache errors mid-cycle: no new
   entries; manage exits only; escalate via Discord.
