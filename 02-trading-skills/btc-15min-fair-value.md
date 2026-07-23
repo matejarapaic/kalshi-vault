@@ -7,7 +7,9 @@ confidence_threshold: 0.60
 risk_profile: medium
 win_rate: null
 sample_size: 0
-status: draft  # -> confirmed only after >=30 settled demo samples + owner review
+status: confirmed  # owner override 2026-07-22: demo had 0 fillable liquidity to
+                    # accumulate the intended >=30 samples; owner authorized live
+                    # trading without that statistical validation, fully aware
 last_updated: 2026-07-22
 ---
 

@@ -3,7 +3,7 @@
 | Agent | Prompt | Role | Vault writes | Vault reads | Cadence | Order access |
 |---|---|---|---|---|---|---|
 | window-monitor | `01-agents/window-monitor/system-prompt.md` | Resolves + verifies the active 15-min window, tracks phases, logs samples, flags fair-value candidates | `03-market-context/active-windows/` | — (window resolution is clock + API, not vault) | Every orchestrator tick (1s); notes at 30s cadence | None (read-only market data) |
-| trader | `01-agents/trader/system-prompt.md` | Re-verifies candidates from fresh data, sizes via risk-management, executes, manages exits | `04-trade-history/trades/` | `02-trading-skills/` (via skill-matcher) | Signal-driven entries; exit sweep every tick | **Sole order-placing agent**; demo autonomous / live manual-approve only |
+| trader | `01-agents/trader/system-prompt.md` | Re-verifies candidates from fresh data, sizes via risk-management, executes, manages exits | `04-trade-history/trades/` | `02-trading-skills/` (via skill-matcher) | Signal-driven entries; exit sweep every tick | **Sole order-placing agent**; autonomous (no per-trade approval) on demo and prod as of 2026-07-22 |
 | analyst | `01-agents/analyst/system-prompt.md` | Settlement polling, paper settlement, postmortems, batched rollups + skill stats | `04-trade-history/postmortems/` (daily aggregates), `03-market-context/active-windows/*` settlement fields, `02-trading-skills/*` frontmatter (`win_rate`/`sample_size` ONLY) | `04-trade-history/trades/`, `03-market-context/active-windows/` | Event-driven (window-close, ~96/day) + 5s settlement polls | None |
 
 ## Boundaries that matter
