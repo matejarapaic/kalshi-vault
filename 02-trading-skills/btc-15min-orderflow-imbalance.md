@@ -13,6 +13,14 @@ last_updated: 2026-07-22
 
 # BTC 15-Minute Order-Flow Imbalance (stub)
 
+> **Not wired yet:** `signal_types: [orderflow-candidate]` above is a
+> forward-looking type name — it is not yet in `kalshi_bots.types.SignalType`,
+> and window-monitor's candidate detector only emits `fair-value-candidate`
+> today. This note is therefore structurally inert (the matcher will never see
+> a signal it declares for) until an order-flow detector is built and the type
+> is added. Intentional, not a typo — the same pattern `_skill-template.md`
+> uses for pre-code specs.
+
 ## What this is
 Thesis: persistent one-sided flow into a 15-minute book (bid depth growing
 while ask depth drains, or trades printing repeatedly on one side) predicts
