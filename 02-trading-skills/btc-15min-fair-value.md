@@ -34,7 +34,9 @@ time (never from the signal payload). Numeric homes: `risk_management.py`
 (PROPOSED 2026-07-22).
 
 1. **Edge:** signed edge for the entry side (model prob × 100 − that side's
-   ask, from `fair-value-model.side_edges`) ≥ `MIN_EDGE_CENTS` (4¢).
+   ask, from `fair-value-model.side_edges`) ≥ `required_edge_cents(price)` —
+   the fee-aware floor `max(MIN_EDGE_CENTS 4¢, round-trip taker fee + 1¢)`.
+   Thin edges that don't survive the fees to enter and exit are not edges.
 2. **Phase:** window phase ∈ `ENTRY_PHASES` (`midpoint` only — i.e. from 2
    minutes after open until 3 minutes before close). No entries in `opening`
    (strike/book still settling) or `near_close` (gamma dominates; the model's
@@ -49,6 +51,11 @@ time (never from the signal payload). Numeric homes: `risk_management.py`
    doesn't handle — no trade either way.
 6. **Ask present** for the entry side (books are one-sided; a missing derived
    ask means there is nothing to buy).
+7. **Not at-the-money:** `fair-value-model.moneyness_sigmas` ≥
+   `ATM_MIN_SIGMA_DISTANCE` (0.5) — the strike must sit at least half a
+   settlement-distribution stddev from spot. At the money the drift-zero model
+   is a coin flip that a few dollars of spot noise flips; the 2026-07-24
+   postmortem's losers clustered exactly here. Surfaces as `not_at_the_money`.
 
 ## Invalidation / exit condition
 Exits are mechanical, never approval-gated, evaluated every tick:
